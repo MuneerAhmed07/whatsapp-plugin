@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* whatsapp icons */
+
+.hidden {
+    display: none;
+}
+
+label {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    max-width: 100%;
+    height: 50px;
+    font-size: 14px;
+    background: #0dc152;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+label .message_icon {
+    margin-right: 5px;
+    font-size: 22px;
+}
+
+/* chat box container */
+
+.wrapper {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    max-width: 400px;
+    background: #fff;
+    box-shadow: 1px 1px 15px rgba(0,0,0,.1);
+    border: 1px solid #fafafa;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease-in-out;
+    z-index: 1000;
+}
+
+.wrapper::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    bottom: -10px;
+    right: 30px;
+    transform: rotate(45deg);
+    border-bottom: 1px solid #fafafa;
+    border-right: 1px solid #fafafa;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+}
+
+#click:checked ~ .wrapper{
+    opacity: 1;
+    bottom: 110px;
+    pointer-events: auto;
+}
+
+.wrapper .description {
+    padding: 20px;
+    background: #0dc152;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.wrapper .description p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.wrapper .contant {
+    padding: 50px 20px 20px;
+}
+
+.wrapper .contant .box {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.wrapper .contant .box:first-child {
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.wrapper .contant .box .box-icon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: #0dc152;
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.wrapper .contant .box h3 .link {
+    font-size: 20px;
+    color: #222;
+    text-decoration: none;
+}
+
+
+
+
+@media(max-width: 768px) {
+    
+    label {
+        width: 70px;
+        height: 70px;
+    }
+
+    label .message_icon {
+        margin-right: 0px;
+        font-size: 40px;
+    }
+
+    label span {
+        display: none;
+    }
+
+}
+
+
+@media(max-width: 450px) {
+
+    .wrapper {
+        width: 85%;
+    }
+    
+    #click:checked ~ .wrapper{
+        bottom: 130px;
+    }
+
+    .wrapper .description {
+        padding: 10px;
+    }
+
+    .wrapper .contant {
+        padding: 50px 10px 20px;
+    }
+
+}
